@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "286574859716",
+    "project_id": "itranz--fyp",
+    "storage_bucket": "itranz--fyp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286574859716:android:852a4c82e90ebfad3a4091",
+        "android_client_info": {
+          "package_name": "com.itranz.fyp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwL1KFdI03H6NEdEePte8zjoSgVwFsV9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
