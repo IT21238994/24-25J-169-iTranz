@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+echo "backend/keys/*.json" >> .gitignore
+
