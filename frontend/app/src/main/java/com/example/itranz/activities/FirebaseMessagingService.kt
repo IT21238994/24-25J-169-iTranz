@@ -1,4 +1,4 @@
-package com.itranz
+package com.example.itranz.activities
 
 import android.app.NotificationChannel
 import android.app.NotificationManager

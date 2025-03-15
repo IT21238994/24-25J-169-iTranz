@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.itranz"
+    namespace = "com.itranz.fyp"  // Updated package name
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.itranz"
+        applicationId = "com.itranz.fyp"  // Updated application ID
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -52,13 +52,16 @@ dependencies {
     implementation("com.google.firebase:firebase-functions-ktx:21.1.0")
     implementation("com.google.firebase:firebase-messaging-ktx:23.2.1")
 
-    // QR Code Scanner (ZXing)
-    implementation("com.google.zxing:core:3.4.1")
-    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+//    // QR Code Scanner (ZXing)
+//    implementation("com.google.zxing:core:3.4.1")
+//    implementation("com.journeyapps:zxing-android-embedded:4.3.0")
 
     // Retrofit for Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    // CodeScanner for QR code scanning
+    implementation ("com.budiyev.android:codescanner:2.1.0")
 
     // Testing Dependencies
     testImplementation("junit:junit:4.13.2")

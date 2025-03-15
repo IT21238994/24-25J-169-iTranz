@@ -1,4 +1,4 @@
-package com.itranz
+package com.example.itranz.activities
 
 import android.content.Intent
 import android.os.Bundle

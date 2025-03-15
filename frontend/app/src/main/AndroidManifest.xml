@@ -3,6 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.itranz.fyp">  <!-- Updated package name -->
 
+    <!-- Firebase permissions (if needed) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Declaring that the app uses the camera but does not require it -->
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,13 +18,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:theme="@style/Theme.ITranz"
         tools:targetApi="31">
 
-        <!-- Correct MainActivity path -->
+        <!-- MainActivity - Entry point of the app -->
         <activity
-            android:name=".activities.MainActivity"
+            android:name="com.example.itranz.activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ITranz">
@@ -25,20 +32,52 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.RegisterActivity"
+
+        <!-- Additional Activities -->
+        <activity android:name="com.example.itranz.activities.RegisterActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.LoginActivity"
+            android:exported="true"/>
+        <activity android:name="com.example.itranz.activities.QRScannerActivity"
+            android:exported="true"/>
+        <activity android:name="com.example.itranz.activities.PaymentActivity"
+            android:exported="true"/>
+        <activity android:name="com.example.itranz.activities.SeatReservationActivity"
+            android:exported="true"/>
+        <activity android:name="com.example.itranz.activities.NICPaymentActivity"
+            android:exported="true"/>
+        <activity android:name="com.example.itranz.activities.AdminPanelActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.GenerateQRActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.PassengerApprovalActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.PassengerConfirmationActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.PaymentProcessingActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.PaymentRequestActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.SeatSelectionActivity"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.SplashScreen"
+            android:exported="true"
+            android:theme="@style/Theme.ITranz"/>
+        <activity android:name="com.example.itranz.activities.UserDashboardActivity"
             android:exported="true"
             android:theme="@style/Theme.ITranz"/>
 
-        <!-- Correct activity paths -->
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.QRScannerActivity" />
-        <activity android:name=".activities.PaymentActivity" />
-        <activity android:name=".activities.SeatReservationActivity" />
-        <activity android:name=".activities.NICPaymentActivity" />
-
         <!-- Firebase Messaging Service -->
         <service
-            android:name=".services.FirebaseMessagingService"
+            android:name="com.example.itranz.services.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>

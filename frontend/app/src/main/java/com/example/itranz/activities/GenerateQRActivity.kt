@@ -1,4 +1,4 @@
-package com.itranz
+package com.example.itranz.activities
 
 import android.graphics.Bitmap
 import android.os.Bundle

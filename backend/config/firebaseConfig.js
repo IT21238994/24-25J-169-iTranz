@@ -1,5 +1,5 @@
 const firebase = require("firebase-admin");
-const serviceAccount = require("../keys/itranz--fyp-firebase-adminsdk-bmr9i-f965f7f035.json");
+const serviceAccount = require("../keys/itranz--fyp-firebase-adminsdk-bmr9i-48b142ff4a.json");
 
 firebase.initializeApp({
   credential: firebase.credential.cert(serviceAccount),
