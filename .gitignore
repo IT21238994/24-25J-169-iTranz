@@ -15,3 +15,5 @@
 local.properties
 echo "backend/keys/*.json" >> .gitignore
 
+backend/keys/*.json
+backend/keys/itranz--fyp-firebase-adminsdk-bmr9i-48b142ff4a.json
