@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/textBusName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bus Name: "
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Route: "
+        android:textSize="16sp"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Starting Bus Stop:"
+        android:textSize="16sp"/>
+
+    <Spinner
+        android:id="@+id/spinnerStartStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Ending Bus Stop:"
+        android:textSize="16sp"/>
+
+    <Spinner
+        android:id="@+id/spinnerEndStop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnCalculateFare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calculate Fare"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textFareResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fare: Rs. 0"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btnPayFare"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pay"
+        android:background="#4CAF50"
+        android:textColor="#FFFFFF"
+        android:padding="12dp"/>
+</LinearLayout>

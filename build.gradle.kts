@@ -15,7 +15,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        mavenCentral()
+        mavenCentral()  // No need to include jcenter()
     }
 }
 
