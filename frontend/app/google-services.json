@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "286574859716",
+    "firebase_url": "https://itranz--fyp-default-rtdb.firebaseio.com",
+    "project_id": "itranz--fyp",
+    "storage_bucket": "itranz--fyp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286574859716:android:c3abcc88cb7cbd413a4091",
+        "android_client_info": {
+          "package_name": "com.example.inidentreport2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwL1KFdI03H6NEdEePte8zjoSgVwFsV9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286574859716:android:1c2867de128f72123a4091",
+        "android_client_info": {
+          "package_name": "com.example.itranzpredictivemaintenance"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwL1KFdI03H6NEdEePte8zjoSgVwFsV9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:286574859716:android:852a4c82e90ebfad3a4091",
+        "android_client_info": {
+          "package_name": "com.itranz.fyp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwL1KFdI03H6NEdEePte8zjoSgVwFsV9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
