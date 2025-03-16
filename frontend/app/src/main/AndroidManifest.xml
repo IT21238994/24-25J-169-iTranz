@@ -23,7 +23,7 @@
 
         <!-- MainActivity - Entry point of the app -->
         <activity
-            android:name="com.itranz.fyp.activities.MainActivity"
+            android:name="com.itranz.fyp.activities.QRScanActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.ITranz">
@@ -34,50 +34,30 @@
         </activity>
 
         <!-- Additional Activities -->
-        <activity android:name="com.itranz.fyp.activities.RegisterActivity"
+        <activity android:name="com.itranz.fyp.activities.NICApprovalActivity"
             android:exported="true"
             android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.LoginActivity"
+        <activity android:name="com.itranz.fyp.activities.NICFareApprovalActivity"
             android:exported="true"/>
-        <activity android:name="com.itranz.fyp.activities.QRScannerActivity"
-            android:exported="true"/>
+<!--        <activity android:name="com.itranz.fyp.activities.QRScanActivity"-->
+<!--            android:exported="true"/>-->
         <activity android:name="com.itranz.fyp.activities.PaymentActivity"
             android:exported="true"/>
         <activity android:name="com.itranz.fyp.activities.SeatReservationActivity"
             android:exported="true"/>
-        <activity android:name="com.itranz.fyp.activities.NICPaymentActivity"
+        <activity android:name="com.itranz.fyp.activities.QRPaymentActivity"
             android:exported="true"/>
-        <activity android:name="com.itranz.fyp.activities.AdminPanelActivity"
+        <activity android:name="com.itranz.fyp.activities.StripePaymentActivity"
             android:exported="true"
             android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.GenerateQRActivity"
-            android:exported="true"
-            android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.PassengerApprovalActivity"
-            android:exported="true"
-            android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.PassengerConfirmationActivity"
-            android:exported="true"
-            android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.PaymentProcessingActivity"
-            android:exported="true"
-            android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.PaymentRequestActivity"
-            android:exported="true"
-            android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.SeatSelectionActivity"
-            android:exported="true"
-            android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.SplashScreen"
-            android:exported="true"
-            android:theme="@style/Theme.ITranz"/>
-        <activity android:name="com.itranz.fyp.activities.UserDashboardActivity"
-            android:exported="true"
-            android:theme="@style/Theme.ITranz"/>
+<!--        <activity android:name="com.itranz.fyp.activities.WalletTopUpActivity"-->
+<!--            android:exported="true"-->
+<!--            android:theme="@style/Theme.ITranz"/>-->
+
 
         <!-- Firebase Messaging Service -->
         <service
-            android:name="com.itranz.fyp.services.MyFirebaseMessagingService"
+            android:name="com.itranz.fyp.services.FCMService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>

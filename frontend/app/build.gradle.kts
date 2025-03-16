@@ -59,18 +59,20 @@ dependencies {
     implementation ("com.google.firebase:firebase-auth-ktx")
 
     // Stripe SDK
-    implementation ("com.stripe:stripe-android:20.45.0") // latest stable version
+    implementation ("com.stripe:stripe-android:20.36.0") // latest stable version
 
     // QR Code Scanner (ZXing)
     implementation("com.google.zxing:core:3.5.1")
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
+    implementation("com.google.mlkit:barcode-scanning:17.0.0")
 
     // Retrofit for Networking
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // CodeScanner for QR code scanning
-    implementation ("com.budiyev.android:codescanner:2.1.0")
+    implementation ("com.budiyev.android:codescanner:2.2.0")
+    implementation ("com.github.yuriy-budiyev:code-scanner:2.3.0")
 
     // Testing Dependencies
     testImplementation("junit:junit:4.13.2")

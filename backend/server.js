@@ -2,12 +2,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { admin, db } = require("./config/firebaseConfig");
-const authRoutes = require("./routes/authRoutes");
-const userRoutes = require("./routes/userRoutes");
-const paymentRoute = require("./routes/paymentRoute");
-const reservationRoutes = require("./routes/reservationRoutes");
+//const authRoutes = require("./routes/authRoutes");
+//const userRoutes = require("./routes/userRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
+//const reservationRoutes = require("./routes/reservationRoutes");
 const driverRoutes = require("./routes/driverRoutes");
-const dataRoutes = require("./routes/dataRoutes");
+//const dataRoutes = require("./routes/dataRoutes");
 const stripe = require("stripe")("sk_test_51QR81201Cm8uyizaJdtP3Stq7D3kREo9DWyk4jVzYNfcgRpYQrv8KpCleHRgQMJ3QUsVo8oaSoz1kcXkyaJHSL6P00tqErfdSH");
 
 const app = express();
@@ -18,12 +18,12 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-app.use("/auth", authRoutes);
-app.use("/user", userRoutes);
-app.use("/api", paymentRoute);
-app.use("/reservation", reservationRoutes);
+//app.use("/auth", authRoutes);
+//app.use("/user", userRoutes);
+app.use("/payment", paymentRoutes);
+//app.use("/reservation", reservationRoutes);
 app.use("/driver", driverRoutes);
-app.use("/data", dataRoutes);
+//app.use("/data", dataRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend is running");
@@ -64,7 +64,7 @@ app.post("/request-payment", async (req, res) => {
       routeName,
       fare,
       distance,
-      status: "pending"
+      status: "pending",
     });
 
     res.send({ message: `Payment request for Rs.${fare} sent successfully.`, fare });
@@ -123,16 +123,20 @@ app.post("/reserve-seat", async (req, res) => {
 });
 
 // Payment Status tracking
-app.get('/payment-status/:requestId', async (req, res) => {
+app.get("/payment-status/:requestId", async (req, res) => {
   const { requestId } = req.params;
   try {
-    const snapshot = await db.ref(`paymentRequests/${requestId}`).once('value');
+    const snapshot = await db.ref(`paymentRequests/${requestId}`).once("value");
     const data = snapshot.val();
     if (data) {
       res.send({ status: data.status });
     } else {
-      res.status(404).send({
-
+      res.status(404).send({ error: "Payment request not found" }); // Fixed this missing part
+    }
+  } catch (err) {
+    res.status(500).send({ error: err.message });
+  }
+});
 
 // Stripe payment intent
 app.post("/create-payment-intent", async (req, res) => {
@@ -180,6 +184,7 @@ app.post("/webhook", bodyParser.raw({ type: "application/json" }), (req, res) =>
   res.json({ received: true });
 });
 
+// Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

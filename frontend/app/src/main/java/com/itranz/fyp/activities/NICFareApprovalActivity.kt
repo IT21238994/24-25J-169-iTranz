@@ -30,20 +30,34 @@ class NICFareApprovalActivity : AppCompatActivity() {
         sendRequestButton = findViewById(R.id.sendRequestButton)
 
         sendRequestButton.setOnClickListener {
+            val passengerNIC = passengerNicInput.text.toString()
+            val driverNIC = driverNicInput.text.toString()
+            val startStop = startStopInput.text.toString()
+            val endStop = endStopInput.text.toString()
+
+            if (passengerNIC.isEmpty() || driverNIC.isEmpty() || startStop.isEmpty() || endStop.isEmpty()) {
+                Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
+            sendRequestButton.isEnabled = false
+
             val request = mapOf(
-                "passengerNIC" to passengerNicInput.text.toString(),
-                "driverNIC" to driverNicInput.text.toString(),
-                "startStop" to startStopInput.text.toString(),
-                "endStop" to endStopInput.text.toString()
+                "passengerNIC" to passengerNIC,
+                "driverNIC" to driverNIC,
+                "startStop" to startStop,
+                "endStop" to endStop
             )
 
             apiService.requestPayment(request).enqueue(object : Callback<Map<String, String>> {
                 override fun onResponse(call: Call<Map<String, String>>, response: Response<Map<String, String>>) {
                     Toast.makeText(this@NICFareApprovalActivity, "Request Sent!", Toast.LENGTH_SHORT).show()
+                    sendRequestButton.isEnabled = true
                 }
 
                 override fun onFailure(call: Call<Map<String, String>>, t: Throwable) {
                     Toast.makeText(this@NICFareApprovalActivity, "Failed: ${t.message}", Toast.LENGTH_SHORT).show()
+                    sendRequestButton.isEnabled = true
                 }
             })
         }
