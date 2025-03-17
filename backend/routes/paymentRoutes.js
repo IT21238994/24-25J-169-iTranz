@@ -4,6 +4,7 @@ const router = express.Router();
 const admin = require('firebase-admin');
 const db = admin.database();
 const stripe = require('stripe')("sk_test_51QR81201Cm8uyizaJdtP3Stq7D3kREo9DWyk4jVzYNfcgRpYQrv8KpCleHRgQMJ3QUsVo8oaSoz1kcXkyaJHSL6P00tqErfdSH"); // Replace with your Stripe secret key
+const { createPaymentIntent } = require('../controllers/paymentController');
 
 // Get Wallet Balance
 router.post('/getWalletBalance', async (req, res) => {
@@ -78,5 +79,5 @@ router.post('/create-payment-intent', async (req, res) => {
         res.status(500).send({ error: error.message });
     }
 });
-
+router.post('/create-payment-intent', createPaymentIntent);
 module.exports = router;

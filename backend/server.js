@@ -2,13 +2,17 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { admin, db } = require("./config/firebaseConfig");
-//const authRoutes = require("./routes/authRoutes");
+const authRoutes = require("./routes/authRoutes");
 //const userRoutes = require("./routes/userRoutes");
 const paymentRoutes = require("./routes/paymentRoutes");
 //const reservationRoutes = require("./routes/reservationRoutes");
-const driverRoutes = require("./routes/driverRoutes");
+//const driverRoutes = require("./routes/driverRoutes");
 //const dataRoutes = require("./routes/dataRoutes");
 const stripe = require("stripe")("sk_test_51QR81201Cm8uyizaJdtP3Stq7D3kREo9DWyk4jVzYNfcgRpYQrv8KpCleHRgQMJ3QUsVo8oaSoz1kcXkyaJHSL6P00tqErfdSH");
+const fcmRoutes = require('./routes/fcmRoutes');
+const walletRoutes = require('./routes/walletRoutes');
+//const paymentRoutes = require('./routes/paymentRoutes');
+const qrRoutes = require('./routes/qrRoutes');
 
 const app = express();
 const port = 3000;
@@ -18,12 +22,16 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Routes
-//app.use("/auth", authRoutes);
+app.use("/auth", authRoutes);
 //app.use("/user", userRoutes);
 app.use("/payment", paymentRoutes);
 //app.use("/reservation", reservationRoutes);
-app.use("/driver", driverRoutes);
+//app.use("/driver", driverRoutes);
 //app.use("/data", dataRoutes);
+app.use('/fcm', fcmRoutes);
+app.use('/api/wallet', walletRoutes);
+//app.use('/api/payment', paymentRoutes);
+app.use('/api/qr', qrRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend is running");
