@@ -1,0 +1,9 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="16dp">
+
+    <EditText android:id="@+id/editNIC" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Passenger NIC"/>
+    <Spinner android:id="@+id/spinnerStart" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Spinner android:id="@+id/spinnerEnd" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+    <Button android:id="@+id/btnRequest" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Request Payment"/>
+</LinearLayout>

@@ -6,6 +6,14 @@ plugins {
     //id ("org.jetbrains.kotlin.android")
 }
 
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+
 android {
     namespace = "com.itranz.fyp"  // Updated package name
     compileSdk = 34
@@ -59,7 +67,10 @@ dependencies {
     implementation ("com.google.firebase:firebase-auth-ktx")
 
     // Stripe SDK
-    implementation ("com.stripe:stripe-android:20.36.0") // latest stable version
+    implementation ("com.stripe:stripe-android:20.48.6") // latest stable version
+
+    implementation ("com.google.code.gson:gson:2.8.6")
+    implementation ("com.squareup.okhttp3:okhttp:4.9.1")
 
     // QR Code Scanner (ZXing)
     implementation("com.google.zxing:core:3.5.1")
@@ -71,8 +82,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     // CodeScanner for QR code scanning
-    implementation ("com.budiyev.android:codescanner:2.2.0")
-    implementation ("com.github.yuriy-budiyev:code-scanner:2.3.0")
+    implementation ("com.budiyev.android:code-scanner:2.3.2")
+    //implementation ("com.github.yuriy-budiyev:code-scanner:2.1.0")
 
     // Testing Dependencies
     testImplementation("junit:junit:4.13.2")

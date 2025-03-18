@@ -79,6 +79,39 @@ class PaymentActivity : AppCompatActivity() {
         )
     }
 
+    private fun calculateFare(busNumber: String, startStop: String, endStop: String) {
+        val client = OkHttpClient()
+        val json = JSONObject().apply {
+            put("busNumber", busNumber)
+            put("startStop", startStop)
+            put("endStop", endStop)
+        }
+        val body = RequestBody.create(MediaType.get("application/json"), json.toString())
+        val request = Request.Builder()
+            .url("$backendUrl/calculateFare")
+            .post(body)
+            .build()
+
+        client.newCall(request).enqueue(object : Callback {
+            override fun onFailure(call: Call, e: IOException) {
+                runOnUiThread {
+                    Toast.makeText(this@PaymentActivity, "Failed to calculate fare", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                val resString = response.body()?.string()
+                val fare = JSONObject(resString).getInt("fare")
+                fareAmountLKR = fare
+                runOnUiThread {
+                    fareTextView.text = "Fare: Rs. $fare"
+                    payButton.isEnabled = true
+                }
+            }
+        })
+    }
+
+
     private fun validateWalletAndPay(amountLKR: Int) {
         progressBar.visibility = View.VISIBLE
         val client = OkHttpClient()

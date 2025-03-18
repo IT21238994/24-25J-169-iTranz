@@ -5,15 +5,23 @@
     android:padding="24dp">
 
     <EditText
-        android:id="@+id/amountInput"
+        android:id="@+id/busNumberInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter amount (LKR)" />
+        android:hint="Enter Bus Number" />
 
     <Button
-        android:id="@+id/topUpButton"
+        android:id="@+id/checkStatusButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Top Up Wallet"
+        android:text="Check Seat Status"
         android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/seatStatusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>

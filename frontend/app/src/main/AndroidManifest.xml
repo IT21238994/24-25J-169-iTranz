@@ -33,17 +33,18 @@
 
         <!-- Other Activities -->
         <activity android:name="com.itranz.fyp.activities.NICApprovalActivity" android:exported="true"/>
-        <activity android:name="com.itranz.fyp.activities.NICFareApprovalActivity" android:exported="true"/>
+        <activity android:name="com.itranz.fyp.activities.FareApprovalActivity" android:exported="true"/>
         <activity android:name="com.itranz.fyp.activities.QRScanActivity" android:exported="true"/>
         <activity android:name="com.itranz.fyp.activities.PaymentActivity" android:exported="true"/>
         <activity android:name="com.itranz.fyp.activities.SeatReservationActivity" android:exported="true"/>
         <activity android:name="com.itranz.fyp.activities.QRPaymentActivity" android:exported="true"/>
         <activity android:name="com.itranz.fyp.activities.StripePaymentActivity" android:exported="true"/>
+        <activity android:name="com.itranz.fyp.activities.TopUpWalletActivity" android:exported="true"/>
         <!-- WalletTopUpActivity commented out for now -->
 
         <!-- Firebase Cloud Messaging Service -->
         <service
-            android:name="com.itranz.fyp.services.FCMService"
+            android:name="com.itranz.fyp.notifications.MyFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT"/>
