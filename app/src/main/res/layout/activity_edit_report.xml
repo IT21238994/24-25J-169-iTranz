@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="60dp"
+    android:gravity="center">
+    <!-- Incident Category -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Incident Category:"
+        android:textSize="16sp"
+        android:layout_marginBottom="8dp" />
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/Sexual_harassment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sexual Harassment" />
+
+        <RadioButton
+            android:id="@+id/radio_overcrowding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overcrowding" />
+
+        <RadioButton
+            android:id="@+id/radio_reckless_driving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reckless Driving" />
+
+        <RadioButton
+            android:id="@+id/radio_pitpocketing_or_theft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pitpocketing or Theft" />
+
+        <RadioButton
+            android:id="@+id/radio_overcharging_by_conductors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Overcharging by conductors" />
+
+        <RadioButton
+            android:id="@+id/Unsanitary_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unsanitary Conditions" />
+
+        <RadioButton
+            android:id="@+id/radio_driver_or_conductor_misconduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Driver or conductor misconduct" />
+
+        <RadioButton
+            android:id="@+id/radio_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other" />
+    </RadioGroup>
+
+    <!-- Bus Route -->
+
+
+
+    <!-- Date -->
+    <EditText
+        android:id="@+id/et_date"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:hint="Enter Date (DD/MM/YYYY)"
+        android:inputType="date|text" />
+
+    <!-- Time -->
+    <EditText
+        android:id="@+id/et_time"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Enter Time (HH:MM)"
+        android:inputType="time|text" />
+
+    <!-- Bus Number -->
+    <EditText
+        android:id="@+id/et_bus_number"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="Enter Bus Number"
+        android:inputType="text" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/et_button_submit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Save Changes" />
+
+
+
+</LinearLayout>
+

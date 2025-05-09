@@ -1,0 +1,37 @@
+/*pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "InidentReport2"
+include ':app'
+
+ */
+
+pluginManagement {
+    repositories {
+        google()  // Include Google's Maven repository
+        mavenCentral()  // Include Maven Central for other dependencies
+        gradlePluginPortal()  // Include the Gradle Plugin Portal
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        google()  // Include Google's Maven repository for resolving dependencies
+        mavenCentral()  // Include Maven Central for resolving dependencies
+    }
+}
+
+rootProject.name = "InidentReport2"
+include ':app'  // Make sure the app module is included
+

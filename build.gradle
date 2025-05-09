@@ -1,0 +1,77 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+/*plugins {
+
+    // Add the dependency for the Google services Gradle plugin
+    id("com.google.gms.google-services") version "4.4.2" apply false
+    classpath 'com.google.gms:google-services:4.4.0' // Use the latest version
+
+    id 'com.android.application' version '7.4.2' apply false  // Use AGP 7.4.2 for compatibility
+    id 'com.android.library' version '7.4.2' apply false      // Use the same version as AGP
+    id 'org.jetbrains.kotlin.android' version '1.9.10' apply false  // Latest stable Kotlin version
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ */
+
+
+
+/*buildscript {
+    repositories {
+        mavenCentral()  // Maven Central for dependencies
+        google()        // Google's repository for Firebase and other dependencies
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'  // Correct AGP version
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10'  // Kotlin plugin
+        classpath 'com.google.gms:google-services:4.3.15'  // Add this line for Firebase services
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()  // Maven Central for dependencies
+        google()        // Google's repository for Firebase and other dependencies
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ */
+
+buildscript {
+    //repositories {
+       // google() // Google's Maven repository
+       // mavenCentral()
+    //}
+
+    dependencies {
+        // Add the classpath for the Google services Gradle plugin
+        classpath 'com.google.gms:google-services:4.4.0'  // Use the latest version
+        classpath 'com.android.tools.build:gradle:7.4.2'   // AGP version
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.10'  // Latest Kotlin version
+
+        //implementation 'androidx.recyclerview:recyclerview:1.3.1'
+    }
+}
+
+plugins {
+    // Google services Gradle plugin
+    id("com.google.gms.google-services") version "4.4.2" apply false
+
+    // Android application and library plugins
+    id 'com.android.application' version '7.4.2' apply false
+    id 'com.android.library' version '7.4.2' apply false
+
+    // Kotlin plugin
+    id 'org.jetbrains.kotlin.android' version '1.9.10' apply false
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+

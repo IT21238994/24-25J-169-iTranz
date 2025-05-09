@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Description EditText -->
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="77dp"
+        android:hint="Enter item description" />
+
+    <!-- RadioGroup with RadioButtons for Lost and Found -->
+    <RadioGroup
+        android:id="@+id/radioGroupItemType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioLost"
+            android:layout_width="178dp"
+            android:layout_height="73dp"
+            android:text="Lost" />
+
+        <RadioButton
+            android:id="@+id/radioFound"
+            android:layout_width="180dp"
+            android:layout_height="73dp"
+            android:text="Found" />
+    </RadioGroup>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/buttonMatch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT" />
+
+    <!-- Result TextView -->
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:padding="8dp"
+        android:text="Result will be shown here"
+        android:textSize="16sp" />
+
+</LinearLayout>
